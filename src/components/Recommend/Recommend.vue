@@ -57,7 +57,6 @@ export default {
       min-width: 0;
       box-sizing: border-box;
       .item-title{
-    
         font-size: .32rem;
         text-overflow: ellipsis;
         overflow: hidden;

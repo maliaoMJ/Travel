@@ -4,7 +4,7 @@
     <ul>
       <li
         class="item border-bottom"
-        v-for="item of list"
+        v-for="item of weekendData"
         :key="item.id"
       >
         <div class="item-img-wrapper">
@@ -23,7 +23,7 @@
 export default {
   name: 'Weekend',
   props: {
-    list: {
+    weekendData: {
       type: Array,
       default: function () {
         return []
@@ -44,12 +44,14 @@ export default {
     overflow: hidden;
     height: 0;
     padding-bottom: 37.09%;
+    background:#fff;
     .item-img{
       width: 100%;
     }
   }
   .item-info{
     padding: .1rem;
+    background:#fff;
     .item-title{
       line-height: .54rem;
       font-size: .32rem;
@@ -57,7 +59,7 @@ export default {
       overflow: hidden;
       white-space: nowrap;
       overflow: hidden;
-    }        
+    }
     .item-desc{
       line-height: .4rem;
       color: #ccc;

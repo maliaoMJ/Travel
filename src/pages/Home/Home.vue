@@ -4,7 +4,7 @@
         <swiper :imgsArr="indexData.swiperList"></swiper>
         <icons :iconsData="indexData.iconList"></icons>
         <recommend :list="indexData.recommendList"></recommend>
-        <weekend :list="indexData.weekendList"></weekend>
+        <weekend :weekendData="indexData.weekendList"></weekend>
     </div>
 </template>
 
