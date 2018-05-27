@@ -3,12 +3,14 @@
         <home-header></home-header>
         <swiper :imgsArr="indexData.swiperList"></swiper>
         <icons :iconsData="indexData.iconList"></icons>
+        <recommend :list="indexData.recommendList"></recommend>
     </div>
 </template>
 
 <script>
 import HomeHeader from '@/components/HomeHeader/HomeHeader'
 import Swiper from '@/components/Swiper/Swiper'
+import Recommend from '@/components/Recommend/Recommend'
 import Icons from '@/components/Icons/Icons'
 import indexResData from '../../mock/index.json'
 export default {
@@ -16,7 +18,8 @@ export default {
   components: {
     HomeHeader,
     Swiper,
-    Icons
+    Icons,
+    Recommend
   },
   data () {
     return {
@@ -34,5 +37,6 @@ export default {
 .homePage{
   width:100%;
   height:100%;
+  overflow: auto;
 }
 </style>

@@ -51,6 +51,7 @@ export default {
 
 .icons{
     padding-top:0.2rem;
+    padding-bottom:.2rem;
     background:#fff;
     .item {
       width:25%;
