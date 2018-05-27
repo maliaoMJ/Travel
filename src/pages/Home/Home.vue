@@ -4,6 +4,7 @@
         <swiper :imgsArr="indexData.swiperList"></swiper>
         <icons :iconsData="indexData.iconList"></icons>
         <recommend :list="indexData.recommendList"></recommend>
+        <weekend :list="indexData.weekendList"></weekend>
     </div>
 </template>
 
@@ -11,6 +12,7 @@
 import HomeHeader from '@/components/HomeHeader/HomeHeader'
 import Swiper from '@/components/Swiper/Swiper'
 import Recommend from '@/components/Recommend/Recommend'
+import Weekend from '@/components/Weekend/Weekend'
 import Icons from '@/components/Icons/Icons'
 import indexResData from '../../mock/index.json'
 export default {
@@ -19,7 +21,8 @@ export default {
     HomeHeader,
     Swiper,
     Icons,
-    Recommend
+    Recommend,
+    Weekend
   },
   data () {
     return {
