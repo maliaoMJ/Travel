@@ -5,7 +5,7 @@
        <i class="fa fa-search"></i>
        <input v-model.trim="searchKeywords" placeholder="搜索关键词" @keyup.enter="search"/>
      </div>
-     <div class="right">上海&nbsp;<i class="fa fa-caret-down" @click="selectCity"></i></div>
+     <div class="right"><router-link to="/city" class="link">上海&nbsp;<i class="fa fa-caret-down" @click="selectCity"></i></router-link></div>
    </div>
 </template>
 <script>
@@ -91,5 +91,12 @@ export default {
     text-align: center;
     color: #fff;
   }
+}
+.link{
+  display:block;
+  width:100%;
+  height: 100%;
+  color:#fff;
+  text-decoration: none;
 }
 </style>
