@@ -10,7 +10,7 @@
     />
     <div class="result" v-show="filterShow">
       <ul>
-          <li class="result-item border-bottom" v-for="item in filterResult" :key="item.id">{{item.name}}</li>
+          <li class="result-item border-bottom" v-for="item in filterResult" :key="item.id" @click="$emit('modifyCity', item.name)">{{item.name}}</li>
         <li class="result-item border-bottom center" v-show="!filterResult.length">暂无匹配结果</li>
       </ul>
     </div>

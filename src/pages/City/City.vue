@@ -4,9 +4,9 @@
           <i class="fa fa-angle-left" @click="goback"></i>
           <h3>城市选择</h3>
         </header>
-        <city-search :cityData="cityData"></city-search>
+        <city-search :cityData="cityData" @modifyCity="modifyCurrentCity"></city-search>
         <alphabet :AlphabetData="AlphabetData" @change="handleChange"></alphabet>
-        <city-list :cityData="cityData" :AlphabetStr="AlphabetStr"></city-list>
+        <city-list :cityData="cityData" :AlphabetStr="AlphabetStr" :currentCity="currentCity" @modifyCity="modifyCurrentCity"></city-list>
     </div>
 </template>
 <script>
@@ -29,6 +29,9 @@ export default {
     }
   },
   computed: {
+    currentCity () {
+      return this.$store.getters.getCurrentCity
+    }
   },
   methods: {
     goback: function () {
@@ -36,6 +39,10 @@ export default {
     },
     handleChange: function (data) {
       this.AlphabetStr = data
+    },
+    modifyCurrentCity (currentCityName) {
+      this.$store.commit('setCurrentCity', currentCityName)
+      this.$router.push('/')
     }
   },
   mounted () {

@@ -7,7 +7,7 @@
             <div
             class="button-wrapper"
             >
-            <div class="button">北京</div>
+            <div class="button">{{this.currentCity}}</div>
             </div>
         </div>
         </div>
@@ -18,6 +18,7 @@
                 class="button-wrapper"
                 v-for="item in cityData.hotCities"
                 :key="item.id"
+                @click="$emit('modifyCity', item.name)"
                 >
                 <div class="button">{{item.name}}</div>
                 </div>
@@ -36,6 +37,7 @@
                 <li class="city-item border-bottom"
                 v-for="cityItem of items"
                 :key="cityItem.id"
+                @click="$emit('modifyCity', cityItem.name)"
                 >{{cityItem.name}}</li>
             </ul>
             </div>
@@ -57,6 +59,10 @@ export default {
     AlphabetStr: {
       type: String,
       default: ''
+    },
+    currentCity: {
+      type: String,
+      default: '北京'
     }
   },
   mounted () {
