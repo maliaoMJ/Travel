@@ -6,23 +6,24 @@
     </header>
     <div class="content-box">
       <div class="banner" @click="showGallaryPic">
-        <img src="http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_600x330_bf9c4904.jpg" alt="">
+        <img :src="bannerImg" alt="">
         <div class="info">
-          <div class="top" v-show="!showAbs" @click="goback"><i class="fa fa-angle-left"></i></div>
+          <div class="top" v-show="!showAbs" @click.stop="goback"><i class="fa fa-angle-left"></i></div>
           <div class="bottom">
-            <div class="left">大连圣亚海洋世界(AAAA景区)</div>
-            <div class="right"><i class="fa fa-image"></i>32</div>
+            <div class="left">{{sightName}}</div>
+            <div class="right"><i class="fa fa-image"></i>{{gallaryImgs.length}}</div>
           </div>
         </div>
       </div>
     <transition name="fade">
-      <gallary v-show="showGallary" @close="showGallary = !showGallary"></gallary>
+      <gallary v-show="showGallary" :gallaryImgs="gallaryImgs" @close="showGallary = !showGallary"></gallary>
     </transition>
     </div>
   </div>
 </template>
 
 <script>
+import detailData from '../../mock/detail.json'
 import Gallary from '@/components/Gallary/Gallary'
 export default {
   name: 'Detail',
@@ -30,7 +31,11 @@ export default {
     return {
       opacity: 0,
       showAbs: false,
-      showGallary: false
+      showGallary: false,
+      sightName: '',
+      bannerImg: '',
+      gallaryImgs: [],
+      categoryList: []
     }
   },
   components: {
@@ -54,11 +59,18 @@ export default {
     },
     showGallaryPic: function () {
       this.showGallary = true
+    },
+    getDetailData () {
+      this.categoryList = detailData.data.categoryList
+      this.gallaryImgs = detailData.data.gallaryImgs
+      this.bannerImg = detailData.data.bannerImg
+      this.sightName = detailData.data.sightName
     }
   },
   mounted () {
     // console.log(this.$store.getters.getCurrentCity, this.$route.params.id)
     // window.addEventListener('scroll', this.handleScroll, true)
+    this.getDetailData()
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll, true)
