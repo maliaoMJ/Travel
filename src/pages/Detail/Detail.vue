@@ -18,6 +18,7 @@
     <transition name="fade">
       <gallary v-show="showGallary" :gallaryImgs="gallaryImgs" @close="showGallary = !showGallary"></gallary>
     </transition>
+    <detail-list :list="categoryList"></detail-list>
     </div>
   </div>
 </template>
@@ -25,6 +26,7 @@
 <script>
 import detailData from '../../mock/detail.json'
 import Gallary from '@/components/Gallary/Gallary'
+import DetailList from '@/components/DetailList/DetailList'
 export default {
   name: 'Detail',
   data () {
@@ -39,7 +41,8 @@ export default {
     }
   },
   components: {
-    Gallary
+    Gallary,
+    DetailList
   },
   methods: {
     goback: function () {

@@ -64,6 +64,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  z-index: 9999;
   .gallary-box{
     width:100%;
     height:50%;

@@ -31,8 +31,11 @@ export default {
   data () {
     return {
       swiperOption: {
+        // 该值应该由父组件出入props Object
         autoplay: true,
         loop: true,
+        observer: true,
+        observeParents: true,
         pagination: {
           el: '.swiper-pagination'
         }
