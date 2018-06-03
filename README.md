@@ -1,6 +1,6 @@
 # travel
-
-> A Vue.js project
+> #预览地址：http://120.77.181.95/  请将chrome调成手机游览器模式
+> A Vue.js Demo 练手
 
 ## Build Setup
 
